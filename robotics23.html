@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Robotics Python \& CoppeliaSim </title>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<link href="robotics/f23/undergradStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    
+    
+<h1 class="display-1 text-center"> Robotics with Coppelia+Py</h1>
+
+<!--	See help here: https://getbootstrap.com/docs/4.0/components/navbar/-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top sticky-top" style="background-color: #FFC0CB;">
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top">-->
+        <a class="navbar-brand" href="#"></a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/University_of_Illinois_at_Chicago_circle_logo.svg/1200px-University_of_Illinois_at_Chicago_circle_logo.svg.png" width="30" height="30" class="d-inline-block align-top" alt="UIC Picture">
+      <a class="navbar-brand" href="#"> Top/About</a>
+        
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+			<!--   All Material  !-->
+      <li class="nav-item active">
+        <a class="nav-link" href="#FullTable">All Material<span class="sr-only">(current)</span></a>
+      </li>
+    <!--   All Material end  !-->
+		<!--   download/links starts  !-->
+        <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="NavbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads/Links</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="robotics/f23/Python.zip"><b>All Python code</b></a>
+              <a class="dropdown-item" href="robotics/f23/Lectures.zip"><b>All Lectures</b></a>
+			  <a class="dropdown-item" href="https://tiny.cc/robotics_f23"><b>YouTube Playlist</b></a>
+		  <a class="dropdown-item" href="https://pab47.github.io/robotics_archive.html"><b>Archived pages</b></a>
+        </div>
+      </li>
+			<!--   download/links ends  !-->
+				<!--   other course  !-->
+		 <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="NavbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All courses</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="http://tiny.cc/legged"><b>Legged Robotics</b></a>
+              <a class="dropdown-item" href="http://tiny.cc/robotics"><b>Robotics MATLAB</b></a> 
+              <a class="dropdown-item" href="http://tiny.cc/roboticspy"><b>Robotics Python</b></a>
+			<a class="dropdown-item" href="http://tiny.cc/robotics23"><b>Robotics Coppelia+Py</b></a>
+              <a class="dropdown-item" href="http://tiny.cc/mujoco"><b>MuJoCo C</b></a>
+			  <a class="dropdown-item" href="http://tiny.cc/mujocopy"><b>MuJoCo Python</b></a>
+			<a class="dropdown-item" href="http://tiny.cc/mechatronix"><b>Mechatronics</b></a>
+			
+        </div>
+      </li>
+		<!--   other course ends  !-->
+		<!--   My webpage starts  !-->
+		<li class="nav-item active">
+        <a class="nav-link" href="https://pab47.github.io">Pranav Bhounsule (homepage)</a>
+      </li>
+		<!--   My webpage ends  !-->
+    </ul>
+  </div>
+</nav>
+    
+<br><br>
+    <div id ="header" align="center" class="col-xl-12">
+        
+<p><b> <b>About:</b> A first course in robotics. The course emphasizes learning through extensive numerical simulations and animations. Mathematical modeling and theory is explained to build the necessary intuition to develop numeric code. Python code provides examples on how to program the physics, develop controllers, and animate the system. This material is supplemented with CoppeliaSim (version 4.5.1) in python (a free physics simulator). <a href="#projects">The CoppeliaSim videos are at the bottom of this page.</a> In each video, see YouTube description for the scene files.
+	I recommend installing Spyder IDE for python (see top of the tables for instructions on how to install). 
+	If you are looking for Robotics with MATLAB see this link: <a href="tiny.cc/robotics">tiny.cc/robotics</a>.
+	If you are looking for Robotics with Python and MuJoCo see this link: <a href="tiny.cc/roboticspy">tiny.cc/roboticspy</a>.
+	</b></p> 
+	 </div>
+	
+		<!--- All material -->
+  
+    
+    <div align="center" class="col-xl-12" id="main">
+    <table style="width:75%" border="3">
+        <tr>
+            <!-- Adding the header colums of content materials and videos -->
+			<th style="text-align: center"><big><big>#</big></big></th>
+            <th style="text-align: center"><big><big>Topic</big></big></th>
+            <th style="text-align: center"><big><big>Youtube</big></big></th>
+            <th style="text-align: center"><big><big>Notes</big></big></th>
+            <th style="text-align: center"><big><big>Code</big></big></th>
+        </tr>
+        
+<!--Contents from MATLAB start here  -->
+<tr style="background-color: #f0f0f9">
+    <td> Lec00</td>
+    <td> Use custom python interpreter for Spyder on Windows</td>
+    <td align="center"> <a href="https://youtu.be/TU2vlZyztRs">Video</a></td>
+    <td align="center">None</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec01a</td>
+    <td> Syllabus</td>
+    <td align="center"> <a href="https://youtu.be/uxvhqRTdUXE">Video</a></td>
+    <td align="center">None</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec01b</td>
+    <td> Python Basics</td>
+    <td align="center"> <a href="https://youtu.be/Am-ynR6vYIg">Video</a></td>
+    <td align="center">None</td>
+    <td align="center"> <a href="f23/Python/lec01_python_basics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec02</td>
+    <td> Python Plots and Animation</td>
+    <td align="center"> <a href="https://youtu.be/GE5QaHhD3gQ">Video</a></td>
+    <td align="center">None</td>
+    <td align="center"> <a href="f23/Python/lec02_python_animations.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec03</td>
+    <td> Coordinate Frames and Homogenous Transformations</td>
+    <td align="center"> <a href="https://youtu.be/1yrTQfWWS6I">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec03_frames.pdf">PDF</a></td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec04</td>
+    <td> 2D Manipulator, Forward and Inverse Kinematics</td>
+    <td align="center"> <a href="https://youtu.be/wikeuDL2PVM">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec04_2D_Manipulator.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec04_2D_manipulator.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec05a</td>
+    <td> Differential Drive, Forward Kinematics</td>
+    <td align="center"> <a href="https://youtu.be/4B3VrDiBee8">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec05_differential_drive.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec05_diff_drive_car.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec05b</td>
+    <td> Differential Drive, Inverse Kinematics </td>
+    <td align="center"> <a href="https://youtu.be/PQ-u_YIHup8">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec06a</td>
+    <td> Introduction to Jacobian</td>
+    <td align="center"> <a href="https://youtu.be/B-bw40v9KRg">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec06_jacobian.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec06_jacobian.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec06b</td>
+    <td> Application of Jacobian, computing Linear Velocity</td>
+    <td align="center"> <a href="https://youtu.be/wkvQ4ylARH4">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec06c</td>
+    <td> Application of Jacobian, computing Static Forces</td>
+    <td align="center"> <a href="https://youtu.be/_PwvXsSqDRo">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr>
+    <td> Lec06d</td>
+    <td> Application of Jacobian, inverse kinematics</td>
+    <td align="center"> <a href="https://youtu.be/NwCuDEGwd1w">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec07</td>
+    <td> 2D Dynamics, Euler-Lagrange, Projectile motion</td>
+    <td align="center"> <a href="https://youtu.be/H1EW7ERArOY">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec07_dynamics.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec07_dynamics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec08</td>
+    <td> Symbolic computation of Euler-Lagrange Equations</td>
+    <td align="center"> <a href="https://youtu.be/aBn6nNBn9Fk">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec08_symbolics.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec08_symbolics.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec09</td>
+    <td> Euler-Lagrange Double Pendulum</td>
+    <td align="center"> <a href="https://youtu.be/Z2pU4LIrtR8">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec09_double_pendulum.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec09_dynamics_double_pendulum.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec10</td>
+    <td> Introduction to Optimization</td>
+    <td align="center"> <a href="https://youtu.be/JiQ2G9MeYLY">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec10_optimization.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec10_optimization.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec11</td>
+    <td> Trajectory Optimization</td>
+    <td align="center"> <a href="https://youtu.be/JiQ2G9MeYLY">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec11_trajectory_optimization.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec11_trajectory_optimization.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec12a</td>
+    <td> Introduction to Trajectory Generation</td>
+    <td align="center"> <a href="https://youtu.be/_UD8dQ-4ZrY">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec12_Trajectory_generation.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec12_trajectory_generation.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec12b</td>
+    <td> Trajectory Generation, Solved Examples</td>
+    <td align="center"> <a href="https://youtu.be/Up8vk_nBRK0">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr>
+    <td> Lec13a</td>
+    <td> Feedback Linearization, Motivation</td>
+    <td align="center"> <a href="https://youtu.be/OrkHleS-SJc">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec13_feedback_linearization.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec13_feedback_control.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec13b</td>
+    <td> Feedback Linearization, N-dimensional system</td>
+    <td align="center"> <a href="https://youtu.be/1TVXOSIeWw4">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr>
+    <td> Lec13c</td>
+    <td> Feedback Linearization, Joint and Task Space</td>
+    <td align="center"> <a href="https://youtu.be/GNrentYoRBQ">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec14a</td>
+    <td> Linear Control, Controllability, Pole Placement, LQR</td>
+    <td align="center"> <a href="https://youtu.be/Yc2EX3lDe4c">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec14_linear_control.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec14_linear_control.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec14b</td>
+    <td> Linearization of differential drive car and pendubot</td>
+    <td align="center"> <a href="https://youtu.be/owv_2YdO8rA">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec15</td>
+    <td> Bicopter, a 2D quadcopter</td>
+    <td align="center"> <a href="https://youtu.be/UQq-qt82wlw">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec15_bicopter.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec15_bicopter.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec16</td>
+    <td> 3D Rotations</td>
+    <td align="center"> <a href="https://youtu.be/RceBkyrV1z8">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/lec16_3D_rotations.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec16_3D_rotations.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec17</td>
+    <td> 3D Angular Velocity</td>
+    <td align="center"> <a href="https://youtu.be/06L3CUhX4N4">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec17_3D_angular_velocity.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec17_3D_angular_velocity.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec18a</td>
+    <td> Forward Kinematics of Manipulators, Denavit Hartenberg</td>
+    <td align="center"> <a href="https://youtu.be/HqLBAtqpGRQ">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec18_3D_forward_kinematics.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec18_3D_forward_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec18b</td>
+    <td> Example 1, Denavit Hartenberg, 2R planar manipulator</td>
+    <td align="center"> <a href="https://youtu.be/e7WoObsslX8">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr>
+    <td> Lec18c</td>
+    <td> Example 2, Denavit Hartenberg, 1R 2P 3D manipulator</td>
+    <td align="center"> <a href="https://youtu.be/7K5WAfaGnoA">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec18d</td>
+    <td> Example 3, Denavit Hartenberg, 3R 3D manipulator/animations</td>
+    <td align="center"> <a href="https://youtu.be/LojeRIvl8to">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">see above</td>
+</tr>
+ 
+<tr>
+    <td> Lec19</td>
+    <td> Inverse Kinematics of 3D Manipulators, Stanford Manipulator </td>
+    <td align="center"> <a href="https://youtu.be/onIfQaSrDpc">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec19_3D_inverse_kinematics.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec19_3D_inverse_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec20</td>
+    <td> 3D Dynamics</td>
+    <td align="center"> <a href="https://youtu.be/2Z-5yM6zdQc">Video</a></td>
+    <td align="center"> <a href="f23/Lectures/Lec20_3D_dynamics.pdf">PDF</a></td>
+    <td align="center"> <a href="f23/Python/lec20_3D_dynamics.zip">Code</a></td>
+</tr>
+ 
+<!--Contents from MATLAB end here -->
+        
+</table> </div>
+    
+<br>
+<br>
+	
+		<!--New Table -->
+	    <div align="center" class="col-xl-12" id="project">
+    <table style="width:75%" border="3">
+        <tr>
+            <!-- Adding the header colums of content materials and videos -->
+			<th style="text-align: center"><big><big>No.</big></big></th>
+			<th style="text-align: center"><big><big id="projects">CoppeliaSim Video</big></big></th>
+            <th style="text-align: center"><big><big>Youtube</big></big></th>
+        </tr>
+		
+		<!-- MATLAB copy paste start-->
+		<tr style="background-color: #f0f0f9">
+    <td> 1</td>
+    <td> Set python path in CoppeliaSim (using python from python.org)</td>
+    <td align="center"> <a href="https://youtu.be/VEYa5MxCFDk">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 2</td>
+    <td> Set python path in CoppeliaSim (using default python on Win)</td>
+    <td align="center"> <a href="https://youtu.be/L3-tOu--c6w">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 3</td>
+    <td> (Basics) Creating the first simulation, running, saving, and recording it</td>
+    <td align="center"> <a href="https://youtu.be/H_Li3QeVM-M">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 4</td>
+    <td> (Basics) Create/Modify/Move Shapes</td>
+    <td align="center"> <a href="https://youtu.be/qrchiEqt2ig">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 5</td>
+    <td> (Basics) Create composite shapes using Group and Merge</td>
+    <td align="center"> <a href="https://youtu.be/v_NuNIdAo_U">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 6</td>
+    <td> (Basics) How to change viewpoint (pan/rotate/zoom/fit-to-view)</td>
+    <td align="center"> <a href="https://youtu.be/98VnjXg1wBc">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 7</td>
+    <td> Projectile with Drag</td>
+    <td align="center"> <a href="https://youtu.be/SfWXvIV2DdY">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 8</td>
+    <td> Differential Drive Car: Modelling (1 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/v_NuNIdAo_U">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 9</td>
+    <td> Differential Drive Car: Control (2 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/4sngp8jhXUg">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 10</td>
+    <td> Two-link planar manipulator, Modelling (part 1 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/VEYa5MxCFDk">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 11</td>
+    <td> Two-link planar manipulator, Inverse Kinematics (part 2 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/uGwYAOai4ro">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 12</td>
+    <td> Pendulum, Modeling (part 1 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/uCzbp8qIXF4">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 13</td>
+    <td> Pendulum, Position/Velocity/Force Control and Transitions (part 2 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/g0WEDsesXjU">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 14</td>
+    <td> Proximity sensor</td>
+    <td align="center"> <a href="https://youtu.be/S_phn_UnBBU">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 15</td>
+    <td> Vision sensor (used as a color sensor)</td>
+    <td align="center"> <a href="https://youtu.be/mDQ_J64Y4Go">Video</a></td>
+</tr>
+ 
+<tr>
+    <td> 16</td>
+    <td> Importing CAD file and writing code</td>
+    <td align="center"> <a href="https://youtu.be/hOE0w0Fhis8">Video</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> 17</td>
+    <td> Creating and programming a slider to control animation</td>
+    <td align="center"> <a href="https://youtu.be/IpS_zniPcrg">Video</a></td>
+</tr>
+ 
+		
+		
+		<!-- MATLAB copy paste end -->
+		
+	</table> </div>
+	
+	<br>
+<br>
+		
+	
+	
+<!-- Comment here-->
+	<br>
+		<ul>
+		<li> This table of contents was generated automatically using MATLAB</li>
+        <li>Comments/Suggestions to Pranav A. Bhounsule (pranav AT uic.edu) </li>
+		<li>Last updated: November 19, 2023</li>
+      </ul>
+		 <br> 
+		 <!-- line break-->
+	
+
+	
+<!--Comment here-->
+<!-- Default Statcounter code for Robotics Course
+pab47.github.io -->
+	<!-- Default Statcounter code for Robotics Python
+https://pab47.github.io/robotics/roboticspy.html -->
+<script type="text/javascript">
+var sc_project=12821169; 
+var sc_invisible=1; 
+var sc_security="246f5fbe"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12821169/0/246f5fbe/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+<!-- End of Statcounter Code -->
+    
+    
+</body>
+</html>
