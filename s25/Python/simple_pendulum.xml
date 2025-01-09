@@ -1,0 +1,14 @@
+<mujoco>
+	<option gravity ="0 0 -9.81"/>
+	<worldbody>
+    <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1"/>
+		<body pos="0 0 0">
+			<joint type="hinge" axis="0 1 0" pos="0 0 0"/>
+			<inertial mass="1" pos="0 0 -0.5" diaginertia="0.1 0.1 0.01" /> 
+			<geom type="cylinder" pos="0 0 -0.5" size="0.01 0.5" rgba=".9 .9 0 1"/>
+		</body>
+	</worldbody>
+	<keyframe>
+	<key qpos="0.5"/>
+	</keyframe>
+</mujoco>
