@@ -1,0 +1,577 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Robotics in 3D with Python </title>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<link href="robotics/f23/undergradStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    
+    
+<h1 class="display-1 text-center"> Robotics in 3D with Python</h1>
+
+<!--	See help here: https://getbootstrap.com/docs/4.0/components/navbar/-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top sticky-top" style="background-color: #CC6600;">
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top">-->
+        <a class="navbar-brand" href="#"></a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/University_of_Illinois_at_Chicago_circle_logo.svg/1200px-University_of_Illinois_at_Chicago_circle_logo.svg.png" width="30" height="30" class="d-inline-block align-top" alt="UIC Picture">
+      <a class="navbar-brand" href="#"> Top/About</a>
+        
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+			<!--   All Material  !-->
+      <li class="nav-item active">
+        <a class="nav-link" href="#FullTable">All Material<span class="sr-only">(current)</span></a>
+      </li>
+    <!--   All Material end  !-->
+		<!--   download/links starts  !-->
+        <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="NavbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Downloads/Links</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="f25/Python.zip"><b>All Python code</b></a>
+              <a class="dropdown-item" href="f25/Lectures.zip"><b>All Lectures</b></a>
+			   <a class="dropdown-item" href="https://tiny.cc/educate"><b>All Online Courses</b></a>
+			  <a class="dropdown-item" href="https://www.youtube.com/playlist?list=PLc7bpbeTIk75Pvzvl5y92iAI-6vEv1kxM"><b>YouTube Playlist</b></a>
+		  <a class="dropdown-item" href="https://pab47.github.io/robotics_archive.html"><b>Archived pages</b></a>
+        </div>
+      </li>
+			<!--   download/links ends  !-->
+				<!--   other course  !-->
+		 <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="NavbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All courses</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="http://tiny.cc/legged"><b>Legged Robotics</b></a>
+              <a class="dropdown-item" href="http://tiny.cc/robotics"><b>Robotics MATLAB</b></a> 
+              <a class="dropdown-item" href="http://tiny.cc/roboticspy"><b>Robotics Python</b></a>
+			<a class="dropdown-item" href="http://tiny.cc/robotics23"><b>Robotics Coppelia+Py</b></a>
+			<a class="dropdown-item" href="http://tiny.cc/robotics24"><b>Robotics 2D</b></a>
+              <a class="dropdown-item" href="http://tiny.cc/mujoco"><b>MuJoCo C</b></a>
+			  <a class="dropdown-item" href="http://tiny.cc/mujocopy"><b>MuJoCo Python</b></a>
+			<a class="dropdown-item" href="http://tiny.cc/mechatronix"><b>Mechatronics</b></a>
+			
+        </div>
+      </li>
+		<!--   other course ends  !-->
+		<!--   My webpage starts  !-->
+		<li class="nav-item active">
+        <a class="nav-link" href="https://pab47.github.io">Pranav Bhounsule (homepage)</a>
+      </li>
+		<!--   My webpage ends  !-->
+    </ul>
+  </div>
+</nav>
+    
+<br><br>
+    <div id ="header" align="center" class="col-xl-12">
+        
+<p><b> <b>About:</b> A first course in 3D robotics. The material teaches fundamental teaches kinematics (homogenous transformation, euler angles, quaternions, forward and inverse kinematics), differential kinematics (velocity and jacobian), dynamics (euler-lagrage, recursive Newton-Euler algorithm, TMT method), and control (trajectory generation, trajectory tracking). The methods are implemented on the a planar 3R manipulator, UR5, and Unitree A1 robot in simulation. The course emphasizes learning through extensive numerical simulations using MuJoCo (python). 
+	I recommend installing Visual Studio Code IDE for python. 
+	If you are looking for 2D Robotics with MATLAB see this link: <a href="tiny.cc/robotics">tiny.cc/robotics</a>.
+	If you are looking for 2D Robotics with Python and MuJoCo see this link: <a href="tiny.cc/roboticspy">tiny.cc/roboticspy</a>.
+	If you are looking for 2D Robotics with Python and Coppelia see this link: <a href="tiny.cc/robotics24">tiny.cc/robotics24</a>.
+	</b></p> 
+	 </div>
+	
+		<!--- All material -->
+  
+    
+    <div align="center" class="col-xl-12" id="main">
+    <table style="width:75%" border="3">
+        <tr>
+            <!-- Adding the header colums of content materials and videos -->
+			<th style="text-align: center"><big><big>#</big></big></th>
+            <th style="text-align: center"><big><big>Topic</big></big></th>
+            <th style="text-align: center"><big><big>Youtube</big></big></th>
+            <th style="text-align: center"><big><big>Notes</big></big></th>
+            <th style="text-align: center"><big><big>Code</big></big></th>
+        </tr>
+        
+<!--Contents from MATLAB start here  -->
+<tr style="background-color: #f0f0f9">
+    <td> </td>
+    <td> Introduction</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+</tr>
+ 
+<tr>
+    <td> Lec0</td>
+    <td> Syllabus</td>
+    <td align="center"> <a href="https://youtu.be/ypMMgrkZeks">Video</a></td>
+    <td align="center">None</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec01</td>
+    <td> Introduction to Python</td>
+    <td align="center"> <a href="https://youtu.be/ezZ8HUQF2Rg">Video</a></td>
+    <td align="center">None</td>
+    <td align="center"> <a href="f25/Python/Lec01_python_basics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> </td>
+    <td> </td>
+    <td align="center"> <a href="">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/">PDF</a></td>
+    <td align="center"> <a href="f25/Python/">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> </td>
+    <td> Kinematics</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+</tr>
+ 
+<tr>
+    <td> Lec02</td>
+    <td> Homogenous Transformation</td>
+    <td align="center"> <a href="https://youtu.be/06rJNsDw2kA">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec02_Homogenous_Transformation.pdf">PDF</a></td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec03a</td>
+    <td> Euler Angles (123 or xyz convention)</td>
+    <td align="center"> <a href="https://youtu.be/9glW_g0YCz0">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec03_euler_angles.pdf">PDF</a></td>
+    <td align="center"> <a href="f25/Python/Lec03_euler_angles.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec03b</td>
+    <td> Rotations in 3D dont commute and in 2D they commute</td>
+    <td align="center"> <a href="https://youtu.be/IZ1-uS837zU">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec03c</td>
+    <td> Gimbal Lock</td>
+    <td align="center"> <a href="https://youtu.be/A-4OswEZFEY">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec04</td>
+    <td> Relation between Quaternions, Axis-Angle, Rotation, Euler Angles</td>
+    <td align="center"> <a href="https://youtu.be/KwO5JlPNw90">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec04_quaternions.pdf">PDF</a></td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec05a</td>
+    <td> Planar 3R, Forward Kinematics, Theory</td>
+    <td align="center"> <a href="https://youtu.be/OIbT4FDkwUY">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec05b</td>
+    <td> Planar 3R, Forward Kinematics \& Reachable Space, Python Code</td>
+    <td align="center"> <a href="https://youtu.be/QUkf6WrBoAs">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec05_forward_kinematics.pdf">PDF</a></td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> Planar manipulator, Modeling (1 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/MmWV-7fV4bg">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec05_planar3R_forward_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> Planar manipulator, Forward Kinematics (2 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/rBu8ShbqoQ4">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> UR5, Interpreting the XML file (1 of 3)</td>
+    <td align="center"> <a href="https://youtu.be/eXMzrsTj6Q4">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec05_ur5_forward_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> UR5, Converting UR5 XML to Homogenous Transformations for Forward Kinematics (2 of 3)</td>
+    <td align="center"> <a href="https://youtu.be/ggHpXbqJ58I">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> UR5, Forward Kinematics in MuJoCo and verify with homogenous transformation (3 of 3)</td>
+    <td align="center"> <a href="https://youtu.be/U6vDKJWDA8M">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec06a</td>
+    <td> Planar 3R, Inverse Kinematics, Theory and Algebraic Solution</td>
+    <td align="center"> <a href="https://youtu.be/Fpa2zem6AD4">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec06_inverse_kinematics.pdf">PDF</a></td>
+    <td align="center"> <a href="f25/Python/Lec06_planar3R_inverse_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec06b</td>
+    <td> Non-Planar 3R manipulator, Inverse Kinematics, Geometric Solution</td>
+    <td align="center"> <a href="https://youtu.be/jBWUNm5Oi1s">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec06c</td>
+    <td> Planar 3R, Inverse Kinematics, Numerical Solution</td>
+    <td align="center"> <a href="https://youtu.be/sn4qf0kw94w">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MjC</td>
+    <td> UR5, Inverse Kinematics for a single pose in MuJoCo (1 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/jpi8nVUzVgA">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec06_ur5_inverse_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> UR5, Inverse Kinematics for a trajectory in MuJoCo (2 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/fTzpIWqrw_I">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> </td>
+    <td> </td>
+    <td align="center"> <a href="">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/">PDF</a></td>
+    <td align="center"> <a href="f25/Python/">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> </td>
+    <td> Differential Kinematics</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec07a</td>
+    <td> Introduction to Linear/Angular Velocity of a Floating Body</td>
+    <td align="center"> <a href="https://youtu.be/rtnbj7a-4vQ">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec07_velocity_floating_body">PDF</a></td>
+    <td align="center"> <a href="f25/Python/Lec07_angular_velocity_123.py.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> Lec07b</td>
+    <td> Relation between angular velocity and Euler rates Floating Body</td>
+    <td align="center"> <a href="https://youtu.be/iVC-KK_7gR8">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec07c</td>
+    <td> Relation between angular velocity and quaternion Floating Body</td>
+    <td align="center"> <a href="https://youtu.be/QiRQp6RlFak">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec08</td>
+    <td> Linear and Angular Velocity Recursion for Manipulators</td>
+    <td align="center"> <a href="https://youtu.be/D-jdPbHVWVc">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec08_velocity_manipulator.pdf">PDF</a></td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> Velocity Propagation formula, planar 3R (1 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/idDVZ2-RJuw">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec08_planar3R_differential_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> Velocity Propagation formula, UR5 (2 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/3rwUdt38ITc">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec08_ur5_differential_kinematics.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec09a</td>
+    <td> Introduction to Jacobian</td>
+    <td align="center"> <a href="https://youtu.be/C98cttCmQj8">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec09_jacobian.pdf">PDF</a></td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec09b</td>
+    <td> Jacobian calculation for planar 3R manipulator</td>
+    <td align="center"> <a href="https://youtu.be/vVxeDU1k4BA">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec09c</td>
+    <td> Jacobian for static forces, planar 3R manipulator</td>
+    <td align="center"> <a href="https://youtu.be/OqK6mYPDZhE">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> Jacobian, planar 3R (1 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/2U1a31-Ciz4">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec09_planar3R_Jacobian.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> Jacobian, UR5 (2 of 2)</td>
+    <td align="center"> <a href="https://youtu.be/qBzJzs8Oonk">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec09_ur5_Jacobian.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> </td>
+    <td> </td>
+    <td align="center"> <a href="">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/">PDF</a></td>
+    <td align="center"> <a href="f25/Python/">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> </td>
+    <td> Dynamics</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+</tr>
+ 
+<tr>
+    <td> Lec10a</td>
+    <td> Dynamics equations for free-floating body and intro to derivation</td>
+    <td align="center"> <a href="https://youtu.be/-3Vuloq6-Gk">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec10_dynamics.pdf">PDF</a></td>
+    <td align="center"> <a href="f25/Python/Lec10_planar_3R_dynamics_symbolic.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec10b</td>
+    <td> Euler-Lagrange Method with a simple example</td>
+    <td align="center"> <a href="https://youtu.be/tr2uJGYdZXc">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec10c</td>
+    <td> Euler-Lagrange Method with a planar 3-link manipulator</td>
+    <td align="center"> <a href="https://youtu.be/GRyz5lcTKM0">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec10d</td>
+    <td> Recursive Newton Euler Algorithm, RNEA</td>
+    <td align="center"> <a href="https://youtu.be/nPJPJQMMfPw">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> Lec10e</td>
+    <td> Recursive Newton Euler Algorithm for a planar 3R manipulator</td>
+    <td align="center"> <a href="https://youtu.be/V9xsb29BL3Y">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> Recursive Newton Euler Algorithm (RNEA), Planar 3R manipulator</td>
+    <td align="center"> <a href="https://youtu.be/MTId-4vRyK0">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec10_planar_3R_dynamics.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> Recursive Newton Euler Algorithm (RNEA), UR5 manipulator</td>
+    <td align="center"> <a href="https://youtu.be/F5xmkqa1zPI">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec10_ur5_dynamics.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> TMT Method to compute Mass Matrix, UR5 manipulator</td>
+    <td align="center"> <a href="https://youtu.be/-MrIs9Rs0DM">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> </td>
+    <td> </td>
+    <td align="center"> <a href="">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/">PDF</a></td>
+    <td align="center"> <a href="f25/Python/">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> </td>
+    <td> Control</td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+</tr>
+ 
+<tr>
+    <td> Lec11a</td>
+    <td> Trajectory generation using Polynomials and Cubic Splines</td>
+    <td align="center"> <a href="https://youtu.be/MdlHWPm9cnc">Video</a></td>
+    <td align="center"> <a href="f25/Lectures/Lec11_trajectory_generation.pdf">PDF</a></td>
+    <td align="center"> <a href="f25/Python/Lec11_joint_cartesian_profiles.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> MJC</td>
+    <td> Trajectory Generation in Joint Space for UR5 manipulator</td>
+    <td align="center"> <a href="https://youtu.be/HT0wIBvClrA">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec11_ur5_traj_generation.zip">Code</a></td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> Trajectory Generation in Task Space for planar 3R manipulator</td>
+    <td align="center"> <a href="https://youtu.be/aJIgKkzi_C0">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec11_planar_3R_traj_generation.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec11b</td>
+    <td> Compare linear interpolation using Euler angle/rotation/quaternions</td>
+    <td align="center"> <a href="https://youtu.be/H7B8_h5ZK_Q">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> Compare linear interpolation using Euler Angles / Rotation Matrices / Quaternions</td>
+    <td align="center"> <a href="https://youtu.be/yI-yYkjjOVs">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec11_compare_orientation_interp.zip">Code</a></td>
+</tr>
+ 
+<tr style="background-color: #f0f0f9">
+    <td> Lec11c</td>
+    <td> Trajectory generation for orientation using LERP and SLERP</td>
+    <td align="center"> <a href="https://youtu.be/og-xde1ImOk">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center">None</td>
+</tr>
+ 
+<tr>
+    <td> MJC</td>
+    <td> Trajectory generation for orientation using LERP and SLERP</td>
+    <td align="center"> <a href="https://youtu.be/DWH0AGDuEvQ">Video</a></td>
+    <td align="center">see above</td>
+    <td align="center"> <a href="f25/Python/Lec11_LERP_SLERP.zip">Code</a></td>
+</tr>
+ 
+<!--Contents from MATLAB end here -->
+        
+</table> </div>
+    
+<br>
+<br>
+	
+		
+	
+	
+<!-- Comment here-->
+	<br>
+		<ul>
+		<li> This table of contents was generated automatically using MATLAB</li>
+        <li>Comments/Suggestions to Pranav A. Bhounsule (pranav AT uic.edu) </li>
+		<li>Last updated: March 24, 2025</li>
+      </ul>
+		 <br> 
+		 <!-- line break-->
+	
+
+	
+<!--Comment here-->
+<!-- Default Statcounter code for Robotics Course
+pab47.github.io -->
+	<!-- Default Statcounter code for Robotics Python
+https://pab47.github.io/robotics/roboticspy.html -->
+<script type="text/javascript">
+var sc_project=12821169; 
+var sc_invisible=1; 
+var sc_security="246f5fbe"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12821169/0/246f5fbe/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+<!-- End of Statcounter Code -->
+    
+    
+</body>
+</html>
