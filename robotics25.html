@@ -38,7 +38,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="f25/Python.zip"><b>All Python code</b></a>
               <a class="dropdown-item" href="f25/Lectures.zip"><b>All Lectures</b></a>
-			   <a class="dropdown-item" href="https://tiny.cc/educate"><b>All Online Courses</b></a>
+	      <a class="dropdown-item" href="https://tiny.cc/educate"><b>All Online Courses</b></a>
 			  <a class="dropdown-item" href="https://www.youtube.com/playlist?list=PLc7bpbeTIk75Pvzvl5y92iAI-6vEv1kxM"><b>YouTube Playlist</b></a>
 		  <a class="dropdown-item" href="https://pab47.github.io/robotics_archive.html"><b>Archived pages</b></a>
         </div>
@@ -70,14 +70,17 @@
 </nav>
     
 <br><br>
-    <div id ="header" align="center" class="col-xl-12">
+    <div id ="header" align="left" class="col-xl-12">
         
-<p><b> <b>About:</b> A first course in 3D robotics. The material teaches fundamental teaches kinematics (homogenous transformation, euler angles, quaternions, forward and inverse kinematics), differential kinematics (velocity and jacobian), dynamics (euler-lagrage, recursive Newton-Euler algorithm, TMT method), and control (trajectory generation, trajectory tracking). The methods are implemented on the a planar 3R manipulator, UR5, and Unitree A1 robot in simulation. The course emphasizes learning through extensive numerical simulations using MuJoCo (python). 
+<p><b> About:</b> A first course in 3D robotics. The material teaches fundamentals of robotics in this order: kinematics (homogenous transformation, Euler angles, rotation matrices, quaternions, forward and inverse kinematics), differential kinematics (velocity and jacobian), dynamics (Euler-Lagrange equations, Recursive Newton-Euler Algorithm, TMT method), and control (trajectory generation, trajectory tracking). The methods are demonstrated on a custom created planar 3R manipulator, the UR5 manipulator, and the Unitree A1 quadruped robot in simulation. The course emphasizes theory by deriving necessary formulae and algorithms and validating them by comparing with MuJoCo (python). For example, we derive a numerical method of computing the Jacobian and then verify with mj_Jac availabe in MuJoCo. Similarly, we use Recursive Newton Euler Method Algorithm (RNEA) to derive the equations of motion using the forward kinematic recursion and backward force/torque recursion and verify the same with mj_fullM and data.qfrc_bias from MuJoCo.
+	<br> <br>
 	I recommend installing Visual Studio Code IDE for python. 
-	If you are looking for 2D Robotics with MATLAB see this link: <a href="tiny.cc/robotics">tiny.cc/robotics</a>.
-	If you are looking for 2D Robotics with Python and MuJoCo see this link: <a href="tiny.cc/roboticspy">tiny.cc/roboticspy</a>.
-	If you are looking for 2D Robotics with Python and Coppelia see this link: <a href="tiny.cc/robotics24">tiny.cc/robotics24</a>.
-	</b></p> 
+	<ul>
+	<li> If you are looking for 2D Robotics with MATLAB see this link: <a href="tiny.cc/robotics">tiny.cc/robotics</a>. </li>
+	<li> If you are looking for 2D Robotics with Python and MuJoCo see this link: <a href="tiny.cc/roboticspy">tiny.cc/roboticspy</a>. </li>
+	<li> If you are looking for 2D Robotics with Python and Coppelia see this link: <a href="tiny.cc/robotics24">tiny.cc/robotics24</a>. </li>
+	</ul>
+	</p> 
 	 </div>
 	
 		<!--- All material -->
@@ -185,7 +188,7 @@
  
 <tr>
     <td> Lec05b</td>
-    <td> Planar 3R, Forward Kinematics \& Reachable Space, Python Code</td>
+    <td> Planar 3R, Forward Kinematics &amp; Reachable Space, Python Code</td>
     <td align="center"> <a href="https://youtu.be/QUkf6WrBoAs">Video</a></td>
     <td align="center"> <a href="f25/Lectures/Lec05_forward_kinematics.pdf">PDF</a></td>
     <td align="center">None</td>
